@@ -2,32 +2,12 @@ package br.com.trabalhogof.domain.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-@Entity
 public class Emprestimo {
 	
-	@Id
-	@GeneratedValue
 	private Long id;
-	
-	@ManyToOne
 	private Livro livro;
-	
-	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataEmprestimo;
-	
-	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date dataDevolucao;
-	
-	@Enumerated(value = EnumType.STRING)
 	private StatusEmprestimo status;
 	
 	private Boolean multaQuitada;

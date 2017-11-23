@@ -2,17 +2,11 @@ package br.com.trabalhogof.domain.entity;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import br.com.trabalhogof.domain.reserva.entity.Reserva;
 
-@Entity
 public class Usuario {
 	
-	@Id
-	@GeneratedValue
 	private Long id;
-	
 	private String nome;
 	private String login;
 	private String senha;

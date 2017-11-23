@@ -1,12 +1,12 @@
 package br.com.trabalhogof.domain.entity;
 
-import javax.persistence.Entity;
+import br.com.trabalhogof.domain.reserva.entity.Reserva;
 
-@Entity
 public class Livro {
 	
 	private String identificador;
 	private String titulo;
+	private Reserva reserva;
 	
 	public boolean disponivel() {
 		//TODO IMPLEMENTAR
@@ -14,20 +14,19 @@ public class Livro {
 	}
 	
 	public void reservar(Usuario usuario) {
-		//TODO IMPLEMENTAR
+		reserva.getStatus().reservar(usuario);
 	}
 	
 	public void baixarReserva(Usuario usuario) {
-		//TODO IMPLEMENTAR
+		reserva.getStatus().baixarReserva(usuario);
 	}
 	
 	public boolean possuiReserva(Usuario usuario) {
-		//TODO IMPLEMENTAR
-		return false;
+		return reserva.getStatus().possuiReserva(usuario);
 	}
 	
 	public void cancelarReserva(Usuario usuario) {
-		//TODO IMPLEMENTAR
+		reserva.getStatus().cancelarReserva(usuario);
 	}
 	
 }

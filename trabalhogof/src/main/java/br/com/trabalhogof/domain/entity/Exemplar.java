@@ -1,8 +1,5 @@
 package br.com.trabalhogof.domain.entity;
 
-import javax.persistence.Entity;
-
-@Entity
 public class Exemplar {
 	
 	private String codigo;
