@@ -20,7 +20,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 9. Forneça um algoritmo padrão para o cálculo do total de multas de um determinado usuário. Este algoritmo deve ser independente da fórmula de cálculo da multa específica de um livro, devendo utilizar somente a interface do método (abstrato).
 
-10. Faça com que os métodos da classe livro respondam de forma adequada dependendo do estado de reserva deste para um usuário. Organize os métodos em classes por estado da reserva.
+**10. Faça com que os métodos da classe livro respondam de forma adequada dependendo do estado de reserva deste para um usuário. Organize os métodos em classes por estado da reserva.**
 
 11. Crie pelo menos mais uma estratégia, diferente da enunciada no caso de uso, para os métodos podeReservar e podeTomarEmpréstimo da classe usuário. Faça com que o usuário possa aderir a uma das estratégias de reserva e empréstimo dinamicamente.
 
