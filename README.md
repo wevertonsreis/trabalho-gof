@@ -1,4 +1,4 @@
-# trabalho-gof
+# Trabalho GoF
 
 Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura deve estar correta) tomando como base os casos de uso e modelo de domínio fornecidos (vide site da disciplina). Implemente o projeto respeitando as seguintes restrições arquiteturais e de design. Para cada restrição implemente o padrão de projeto do GoF apropriado.
 
