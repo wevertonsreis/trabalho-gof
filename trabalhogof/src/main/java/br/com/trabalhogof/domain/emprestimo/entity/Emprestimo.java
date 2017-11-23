@@ -1,11 +1,14 @@
-package br.com.trabalhogof.domain.entity;
+package br.com.trabalhogof.domain.emprestimo.entity;
 
 import java.util.Date;
 
+import br.com.trabalhogof.domain.entity.Exemplar;
+import br.com.trabalhogof.domain.entity.Usuario;
+
 public class Emprestimo {
 	
-	private Long id;
-	private Livro livro;
+	private Usuario usuario;
+	private Exemplar exemplar;
 	private Date dataEmprestimo;
 	private Date dataDevolucao;
 	private StatusEmprestimo status;
@@ -26,20 +29,20 @@ public class Emprestimo {
 	 * Getters e Setters
 	 */
 	
-	public Long getId() {
-		return id;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public Livro getLivro() {
-		return livro;
+	public Exemplar getExemplar() {
+		return exemplar;
 	}
 
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public void setExemplar(Exemplar exemplar) {
+		this.exemplar = exemplar;
 	}
 
 	public Date getDataEmprestimo() {
@@ -73,5 +76,5 @@ public class Emprestimo {
 	public void setMultaQuitada(Boolean multaQuitada) {
 		this.multaQuitada = multaQuitada;
 	}
-	
+
 }
