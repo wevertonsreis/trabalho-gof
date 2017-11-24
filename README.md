@@ -4,11 +4,11 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 **1. A classe que gerencia as conexões com o banco de dados (ou outra forma de persistência) deve ter somente uma instância.**
 
-2. Respeite a arquitetura DDD e forneça interfaces bem definida e centralizadoras para acesso as camadas.
+**2. Respeite a arquitetura DDD e forneça interfaces bem definida e centralizadoras para acesso as camadas.
 
 **3. Os comandos que a aplicação realizará serão passados para ela utilizando um parâmetro do tipo string. Interprete esta string identificando o comando que a aplicação irá realizar e implemente uma classe de tratamento para cada comando.**
 
-4. Forneça de uma forma flexível e que possa ser adicionada em tempo de execução a necessidade de autenticação para execução de um comando.
+**4. Forneça de uma forma flexível e que possa ser adicionada em tempo de execução a necessidade de autenticação para execução de um comando.
 
 5. Forneça uma estrutura composta para representar o índice de um livro. Um índice é um conjunto de seções. Uma seção é um conjunto de subseções. As subseções podem ter subseções, e assim por diante, não tendo um limite para os níveis de hierarquia do índice.
 
@@ -16,7 +16,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 7. Forneça um mecanismo de notificação dos usuários aguardando por um livro que atue da seguinte maneira. Os usuários aguardando por um livro são organizados em uma fila sequencial por ordem de cronológica de pedido. Quando um livro é devolvido os usuários são notificados na ordem da fila. Caso eles possam tomar um livro como empréstimo ele recebem uma mensagem sobre isto, caso contrário, repassa a solicitação para o próximo usuário na cadeia.
 
-8. Forneça fábricas apropriadas para criação de agregados.
+**8. Forneça fábricas apropriadas para criação de agregados.
 
 9. Forneça um algoritmo padrão para o cálculo do total de multas de um determinado usuário. Este algoritmo deve ser independente da fórmula de cálculo da multa específica de um livro, devendo utilizar somente a interface do método (abstrato).
 
