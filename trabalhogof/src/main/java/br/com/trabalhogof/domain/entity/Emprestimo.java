@@ -1,9 +1,6 @@
-package br.com.trabalhogof.domain.emprestimo.entity;
+package br.com.trabalhogof.domain.entity;
 
 import java.util.Date;
-
-import br.com.trabalhogof.domain.entity.Exemplar;
-import br.com.trabalhogof.domain.entity.Usuario;
 
 public class Emprestimo {
 	

@@ -2,7 +2,7 @@ package br.com.trabalhogof.domain.entity;
 
 public class Exemplar {
 	
-	private String codigo;
+	private Long id;
 	
 	public boolean disponivel() {
 		//TODO IMPLEMENTAR
@@ -12,4 +12,13 @@ public class Exemplar {
 	public void emprestar(Usuario usuario) {
 		//TODO IMPLEMENTAR
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 }

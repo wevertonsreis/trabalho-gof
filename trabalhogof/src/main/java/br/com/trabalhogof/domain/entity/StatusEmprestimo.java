@@ -1,4 +1,4 @@
-package br.com.trabalhogof.domain.emprestimo.entity;
+package br.com.trabalhogof.domain.entity;
 
 public enum StatusEmprestimo {
 	ATIVO,
