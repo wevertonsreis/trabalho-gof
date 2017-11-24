@@ -2,9 +2,11 @@ package br.com.trabalhogof.view.command;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.trabalhogof.view.decorator.AutenticacaoDecorator;
+
 public class Invoker {
 	
-	private static Map<String, Command> comandos = new HashMap<String, Command>();
+	private static Map<String, Command> comandos = new HashMap<>();
 
 	static{
 		comandos.put("ReservarLivro", new ReservarLivroCommand());
@@ -12,9 +14,12 @@ public class Invoker {
 		comandos.put("CancelarReserva", new CancelarReservaCommand());
 	}
 
-	public static void invoke(String command){
+	private Invoker() {}
+	
+	public static void invoke(String command) {
 		Command c = comandos.get(command);
-		c.execute();
+		AutenticacaoDecorator decorator = new AutenticacaoDecorator(c);
+		decorator.execute();
 	}
 	
 }

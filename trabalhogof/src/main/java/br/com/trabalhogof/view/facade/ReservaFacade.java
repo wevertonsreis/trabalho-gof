@@ -9,6 +9,8 @@ import br.com.trabalhogof.domain.to.UsuarioTO;
 
 public class ReservaFacade {
 
+	private ReservaFacade() {}
+
 	public static void reservarLivro(Long idLivro, UsuarioTO usuarioTO) {
 		LivroTO livroTO = LivroServices.localizarLivro(idLivro);
 		LivroServices.realizarReserva(livroTO, usuarioTO);
