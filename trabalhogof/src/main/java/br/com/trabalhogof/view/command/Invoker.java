@@ -16,10 +16,16 @@ public class Invoker {
 
 	private Invoker() {}
 	
-	public static void invoke(String command) {
+	/**
+	 * Responsavel por invocar o comando
+	 * 
+	 * @param command Comando a ser executado
+	 * @param args Parametros a ser utilizado no comando
+	 */
+	public static void invoke(String command, Object args) {
 		Command c = comandos.get(command);
-		AutenticacaoDecorator decorator = new AutenticacaoDecorator(c);
-		decorator.execute();
+		AutenticacaoDecorator autenticacaoDecorator = new AutenticacaoDecorator(c);
+		autenticacaoDecorator.execute(args);
 	}
 	
 }

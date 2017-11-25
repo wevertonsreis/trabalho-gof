@@ -11,8 +11,8 @@ public abstract class Decorator implements Command {
 	}
 	
 	@Override
-	public void execute() {
-		command.execute();
+	public void execute(Object... args) {
+		command.execute(args);
 	}
 	
 }

@@ -19,13 +19,13 @@ public class Cliente {
 		
 		switch (commando) {
 		case 1:
-			Invoker.invoke("ReservarLivro");
+			Invoker.invoke("ReservarLivro", null);
 			break;
 		case 2:
-			Invoker.invoke("ListarReservas");
+			Invoker.invoke("ListarReservas", null);
 			break;
 		case 3:
-			Invoker.invoke("CancelarReserva");
+			Invoker.invoke("CancelarReserva", null);
 			break;
 		default:
 			System.out.println("Opção inválida!");
