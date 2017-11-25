@@ -10,7 +10,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 **4. Forneça de uma forma flexível e que possa ser adicionada em tempo de execução a necessidade de autenticação para execução de um comando.**
 
-5. Forneça uma estrutura composta para representar o índice de um livro. Um índice é um conjunto de seções. Uma seção é um conjunto de subseções. As subseções podem ter subseções, e assim por diante, não tendo um limite para os níveis de hierarquia do índice.
+**5. Forneça uma estrutura composta para representar o índice de um livro. Um índice é um conjunto de seções. Uma seção é um conjunto de subseções. As subseções podem ter subseções, e assim por diante, não tendo um limite para os níveis de hierarquia do índice.**
 
 6. Forneça um mecanismo para percorrer e imprimir o índice de uma forma sequencial sem expor a estrutura interna do índice. O cliente que consumir este recurso deve atuar pedindo sempre o próximo elemento do índice, podendo assim percorrer todos eles de forma transparente.
 
