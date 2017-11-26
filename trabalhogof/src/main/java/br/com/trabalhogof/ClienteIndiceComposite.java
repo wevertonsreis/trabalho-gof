@@ -4,7 +4,7 @@ import br.com.trabalhogof.domain.Indice;
 import br.com.trabalhogof.domain.Sessao;
 import br.com.trabalhogof.domain.SubSessao;
 
-public class ClienteIndiceLivro {
+public class ClienteIndiceComposite {
 
 	public static void main(String[] args) {
 
