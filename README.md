@@ -12,7 +12,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 **5. Forneça uma estrutura composta para representar o índice de um livro. Um índice é um conjunto de seções. Uma seção é um conjunto de subseções. As subseções podem ter subseções, e assim por diante, não tendo um limite para os níveis de hierarquia do índice.**
 
-6. Forneça um mecanismo para percorrer e imprimir o índice de uma forma sequencial sem expor a estrutura interna do índice. O cliente que consumir este recurso deve atuar pedindo sempre o próximo elemento do índice, podendo assim percorrer todos eles de forma transparente.
+**6. Forneça um mecanismo para percorrer e imprimir o índice de uma forma sequencial sem expor a estrutura interna do índice. O cliente que consumir este recurso deve atuar pedindo sempre o próximo elemento do índice, podendo assim percorrer todos eles de forma transparente.**
 
 7. Forneça um mecanismo de notificação dos usuários aguardando por um livro que atue da seguinte maneira. Os usuários aguardando por um livro são organizados em uma fila sequencial por ordem de cronológica de pedido. Quando um livro é devolvido os usuários são notificados na ordem da fila. Caso eles possam tomar um livro como empréstimo ele recebem uma mensagem sobre isto, caso contrário, repassa a solicitação para o próximo usuário na cadeia.
 
