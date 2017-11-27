@@ -3,6 +3,7 @@ package br.com.trabalhogof.domain.entity;
 import java.util.List;
 
 import br.com.trabalhogof.domain.UsuarioHandler;
+import br.com.trabalhogof.domain.adapter.AutenticacaoAdapter;
 import br.com.trabalhogof.domain.to.UsuarioTO;
 
 public class Usuario extends UsuarioHandler {
@@ -19,6 +20,12 @@ public class Usuario extends UsuarioHandler {
 		super(proximoUsuarioHandler);
 	}
 	
+	/**
+	 * Metodo responsavel por criar um {@link Usuario} a partir de um {@link UsuarioTO}
+	 * 
+	 * @param usuarioTO
+	 * @return {@link Usuario}
+	 */
 	public static Usuario newUsuario(UsuarioTO usuarioTO) {
 		Usuario usuario = new Usuario(null);
 		usuario.setId(usuarioTO.getId());
@@ -47,6 +54,14 @@ public class Usuario extends UsuarioHandler {
 		return perfil.podeTomarEmprestimo();
 	}
 
+	/**
+	 * Responsavel por realizar a autenticacao do usuario
+	 */
+	public void autenticar() {
+		AutenticacaoAdapter autenticacaoAdapter = new AutenticacaoAdapter(this);
+		autenticacaoAdapter.autenticar();
+	}
+	
 	/**
 	 * Responsavel por adicionar reservas ao usuario
 	 * 

@@ -4,6 +4,9 @@ import br.com.trabalhogof.application.LivroServices;
 import br.com.trabalhogof.domain.to.EmprestimoTO;
 import br.com.trabalhogof.domain.to.UsuarioTO;
 
+/**
+ * Classe de fachada para os servicos de emprestimos
+ */
 public class EmprestimoFacade {
 
 	private EmprestimoFacade() {}
