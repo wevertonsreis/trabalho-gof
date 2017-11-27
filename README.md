@@ -14,7 +14,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 **6. Forneça um mecanismo para percorrer e imprimir o índice de uma forma sequencial sem expor a estrutura interna do índice. O cliente que consumir este recurso deve atuar pedindo sempre o próximo elemento do índice, podendo assim percorrer todos eles de forma transparente.**
 
-7. Forneça um mecanismo de notificação dos usuários aguardando por um livro que atue da seguinte maneira. Os usuários aguardando por um livro são organizados em uma fila sequencial por ordem de cronológica de pedido. Quando um livro é devolvido os usuários são notificados na ordem da fila. Caso eles possam tomar um livro como empréstimo ele recebem uma mensagem sobre isto, caso contrário, repassa a solicitação para o próximo usuário na cadeia.
+**7. Forneça um mecanismo de notificação dos usuários aguardando por um livro que atue da seguinte maneira. Os usuários aguardando por um livro são organizados em uma fila sequencial por ordem de cronológica de pedido. Quando um livro é devolvido os usuários são notificados na ordem da fila. Caso eles possam tomar um livro como empréstimo ele recebem uma mensagem sobre isto, caso contrário, repassa a solicitação para o próximo usuário na cadeia.**
 
 **8. Forneça fábricas apropriadas para criação de agregados.**
 
@@ -22,7 +22,7 @@ Implemente a arquitetura do sistema (não precisa funcionar, mas a arquitetura d
 
 **10. Faça com que os métodos da classe livro respondam de forma adequada dependendo do estado de reserva deste para um usuário. Organize os métodos em classes por estado da reserva.**
 
-11. Crie pelo menos mais uma estratégia, diferente da enunciada no caso de uso, para os métodos podeReservar e podeTomarEmpréstimo da classe usuário. Faça com que o usuário possa aderir a uma das estratégias de reserva e empréstimo dinamicamente.
+**11. Crie pelo menos mais uma estratégia, diferente da enunciada no caso de uso, para os métodos podeReservar e podeTomarEmpréstimo da classe usuário. Faça com que o usuário possa aderir a uma das estratégias de reserva e empréstimo dinamicamente.**
 
 12. Considere que a autenticação do sistema será realizada através de uma API de autenticação coorporativa. Contudo, como utilizamos o DDD no projeto o método autenticar deve estar na classe de domínio correspondente, no caso, Usuário. Crie o método autenticar de usuário como uma adaptação da API de autenticação coorporativa. Esta API deve estar representada em outra classe que não usuário.
 
