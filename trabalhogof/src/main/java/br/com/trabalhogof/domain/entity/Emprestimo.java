@@ -5,7 +5,6 @@ import java.util.Date;
 public class Emprestimo {
 	
 	private Usuario usuario;
-	private Exemplar exemplar;
 	private Date dataEmprestimo;
 	private Date dataDevolucao;
 	private StatusEmprestimo status;
@@ -18,8 +17,15 @@ public class Emprestimo {
 	 * @return
 	 */
 	public float calcularMulta() {
-		//TODO IMPLEMENTAR
 		return 0.0f;
+	}
+	
+	/**
+	 * Retorna verdadeiro se o emprestimo estiver vigente
+	 * @return
+	 */
+	public boolean isEmprestimoVigente() {
+		return StatusEmprestimo.ATIVO.equals(getStatus());
 	}
 
 	/*
@@ -32,14 +38,6 @@ public class Emprestimo {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public Exemplar getExemplar() {
-		return exemplar;
-	}
-
-	public void setExemplar(Exemplar exemplar) {
-		this.exemplar = exemplar;
 	}
 
 	public Date getDataEmprestimo() {
