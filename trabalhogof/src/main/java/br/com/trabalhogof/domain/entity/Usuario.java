@@ -2,22 +2,26 @@ package br.com.trabalhogof.domain.entity;
 
 import java.util.List;
 
+import br.com.trabalhogof.domain.UsuarioHandler;
 import br.com.trabalhogof.domain.to.UsuarioTO;
 
-public class Usuario {
-	
-	private static final int QUANTIDADE_MAXIMA_RESERVA = 2;
+public class Usuario extends UsuarioHandler {
 	
 	private Long id;
 	private String nome;
 	private String login;
 	private String senha;
 	private Perfil perfil;
+	private TipoUsuario tipo;
 	private List<Reserva> reservas;
 	private List<Emprestimo> emprestimos;
 	
+	public Usuario(UsuarioHandler proximoUsuarioHandler) {
+		super(proximoUsuarioHandler);
+	}
+	
 	public static Usuario newUsuario(UsuarioTO usuarioTO) {
-		Usuario usuario = new Usuario();
+		Usuario usuario = new Usuario(null);
 		usuario.setId(usuarioTO.getId());
 		usuario.setNome(usuarioTO.getNome());
 		usuario.setLogin(usuarioTO.getLogin());
@@ -26,23 +30,11 @@ public class Usuario {
 	}
 	
 	public boolean podeReservar() {
-		if(reservas == null)
-			return true;
-		
-		int reservasAtiva = 0;
-		for (Reserva reserva : reservas) {
-			if (reserva.isAtiva())
-				reservasAtiva++;
-		}
-		
-		if (reservasAtiva < QUANTIDADE_MAXIMA_RESERVA)
-			return true;
-		
-		return false;
+		return tipo.podeReservar(reservas);
 	}
 	
+	@Override
 	public boolean podeTomarEmprestimo() {
-		//TODO IMPLEMENTAR
 		return false;
 	}
 

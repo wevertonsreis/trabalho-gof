@@ -12,10 +12,11 @@ import br.com.trabalhogof.domain.to.UsuarioTO;
 
 public class LivroServices {
 	
+	private LivroServices() {}
+	
 	public static LivroTO localizarLivro(Long id) {
 		Livro livro = LivroRepository.find(id);
-		LivroTO livroTO = new LivroTO(livro.getId(), livro.getTitulo());
-		return livroTO;
+		return new LivroTO(livro.getId(), livro.getTitulo());
 	}
 	
 	public static void realizarReserva(LivroTO livroTO, UsuarioTO usuarioTO) {
