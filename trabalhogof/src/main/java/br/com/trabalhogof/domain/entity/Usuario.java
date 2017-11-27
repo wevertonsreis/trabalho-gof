@@ -43,7 +43,7 @@ public class Usuario {
 	
 	public boolean podeTomarEmprestimo() {
 		//TODO IMPLEMENTAR
-		return false;
+		return true;
 	}
 
 	public boolean addReserva(Reserva reserva) {
