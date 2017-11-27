@@ -2,23 +2,18 @@ package br.com.trabalhogof.domain.entity;
 
 import java.util.Date;
 
-public class Emprestimo {
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+
+import br.com.trabalhogof.domain.CalculadorDeMulta;
+
+public class Emprestimo extends CalculadorDeMulta {
 	
 	private Usuario usuario;
 	private Date dataEmprestimo;
 	private Date dataDevolucao;
 	private StatusEmprestimo status;
-	
 	private Boolean multaQuitada;
-	
-	/**
-	 * Responsavel por realizar o calculo da multa
-	 * 
-	 * @return
-	 */
-	public float calcularMulta() {
-		return 0.0f;
-	}
 	
 	/**
 	 * Retorna verdadeiro se o emprestimo estiver vigente
@@ -28,6 +23,29 @@ public class Emprestimo {
 		return StatusEmprestimo.ATIVO.equals(getStatus());
 	}
 
+	/**
+	 * Definicao do valor da multa diaria
+	 */
+	@Override
+	public float valorMultaAtrazo() {
+		return 1.0f;
+	}
+
+	/**
+	 * Retorna a quantidade de dias de atrazo
+	 */
+	@Override
+	public int quantidadeDiasAtrazo() {
+		DateTime dataInicio = new DateTime(dataEmprestimo);
+		DateTime dataFinal = new DateTime(dataDevolucao);
+		
+		Days days = Days.daysBetween(dataInicio, dataFinal);
+		
+		int maximoDiasPermitidos = 1;
+		
+		return days.getDays() - maximoDiasPermitidos;
+	}
+	
 	/*
 	 * Getters e Setters
 	 */
