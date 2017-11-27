@@ -12,7 +12,6 @@ public class Usuario extends UsuarioHandler {
 	private String login;
 	private String senha;
 	private Perfil perfil;
-	private TipoUsuario tipo;
 	private List<Reserva> reservas;
 	private List<Emprestimo> emprestimos;
 	
@@ -29,15 +28,31 @@ public class Usuario extends UsuarioHandler {
 		return usuario;
 	}
 	
+	/**
+	 * De acordo com o perfil do usuario se utiliza uma 
+	 * estrategia diferente para permitir reservar
+	 * 
+	 * @return
+	 */
 	public boolean podeReservar() {
-		return tipo.podeReservar(reservas);
+		return perfil.podeReservar(reservas);
 	}
 	
+	/**
+	 * De acordo com o perfil do usuario se utiliza uma
+	 * estrategia diferente para permitir emprestimo
+	 */
 	@Override
 	public boolean podeTomarEmprestimo() {
-		return false;
+		return perfil.podeTomarEmprestimo();
 	}
 
+	/**
+	 * Responsavel por adicionar reservas ao usuario
+	 * 
+	 * @param reserva Nova reserva
+	 * @return
+	 */
 	public boolean addReserva(Reserva reserva) {
 		return reservas.add(reserva);
 	}
