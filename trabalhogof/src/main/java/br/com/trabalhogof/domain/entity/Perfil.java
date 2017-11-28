@@ -6,7 +6,7 @@ import br.com.trabalhogof.domain.EstrategiaEmprestimo;
 import br.com.trabalhogof.domain.EstrategiaReserva;
 
 public enum Perfil implements EstrategiaReserva, EstrategiaEmprestimo {
-	USUARIO {
+	USUARIO(2) {
 		
 		@Override
 		public boolean podeReservar(List<Reserva> reservas) {
@@ -19,7 +19,7 @@ public enum Perfil implements EstrategiaReserva, EstrategiaEmprestimo {
 					reservasAtiva++;
 			}
 			
-			return reservasAtiva < 2;	
+			return reservasAtiva < getQuantidadeMaximaReserva();	
 		}
 		
 		@Override
@@ -28,7 +28,7 @@ public enum Perfil implements EstrategiaReserva, EstrategiaEmprestimo {
 		}
 		
 	},
-	BIBLIOTECARIA {
+	BIBLIOTECARIA(10) {
 		
 		@Override
 		public boolean podeReservar(List<Reserva> reservas) {
@@ -41,7 +41,7 @@ public enum Perfil implements EstrategiaReserva, EstrategiaEmprestimo {
 					reservasAtiva++;
 			}
 			
-			return reservasAtiva < 10;	
+			return reservasAtiva < getQuantidadeMaximaReserva();	
 		}
 		
 		@Override
@@ -50,4 +50,19 @@ public enum Perfil implements EstrategiaReserva, EstrategiaEmprestimo {
 		}
 		
 	};
+	
+	private int quantidadeMaximaReserva;
+
+	/**
+	 * 
+	 * @param quantidadeMaximaReserva
+	 */
+	private Perfil(int quantidadeMaximaReserva) {
+		this.quantidadeMaximaReserva = quantidadeMaximaReserva;
+	}
+
+	public int getQuantidadeMaximaReserva() {
+		return quantidadeMaximaReserva;
+	}
+	
 }

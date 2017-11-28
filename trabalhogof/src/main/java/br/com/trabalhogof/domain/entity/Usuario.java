@@ -16,6 +16,10 @@ public class Usuario extends UsuarioHandler {
 	private List<Reserva> reservas;
 	private List<Emprestimo> emprestimos;
 	
+	/**
+	 * 
+	 * @param proximoUsuarioHandler
+	 */
 	public Usuario(UsuarioHandler proximoUsuarioHandler) {
 		super(proximoUsuarioHandler);
 	}

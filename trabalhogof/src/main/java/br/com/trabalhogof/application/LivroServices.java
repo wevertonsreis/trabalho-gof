@@ -7,6 +7,7 @@ import br.com.trabalhogof.domain.entity.Exemplar;
 import br.com.trabalhogof.domain.entity.Livro;
 import br.com.trabalhogof.domain.entity.Reserva;
 import br.com.trabalhogof.domain.entity.Usuario;
+import br.com.trabalhogof.domain.factory.LivroFactory;
 import br.com.trabalhogof.domain.repository.ExemplarRepository;
 import br.com.trabalhogof.domain.repository.LivroRepository;
 import br.com.trabalhogof.domain.repository.ReservaRepository;
@@ -20,11 +21,11 @@ public class LivroServices {
 	
 	public static LivroTO localizarLivro(Long id) {
 		Livro livro = LivroRepository.find(id);
-		return new LivroTO(livro.getId(), livro.getTitulo());
+		return new LivroTO(livro.getId(), livro.getTitulo(), livro.getTipo().name());
 	}
 	
 	public static void realizarReserva(LivroTO livroTO, UsuarioTO usuarioTO) {
-		Livro livro = Livro.newLivro(livroTO);
+		Livro livro = LivroFactory.createLivro(livroTO);
 		Usuario usuario = Usuario.newUsuario(usuarioTO);
 		if (livro.disponivel() && usuario.podeReservar()) {
 			Reserva reserva = livro.reservar(usuario);
@@ -38,7 +39,7 @@ public class LivroServices {
 	}
 
 	public static void cancelarReserva(LivroTO livroTO, UsuarioTO usuarioTO) {
-		Livro livro = Livro.newLivro(livroTO);
+		Livro livro = LivroFactory.createLivro(livroTO);
 		Usuario usuario = Usuario.newUsuario(usuarioTO);
 		livro.cancelarReserva(usuario);
 	}

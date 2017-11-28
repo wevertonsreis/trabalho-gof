@@ -4,6 +4,7 @@ public enum StatusReserva implements Status {
 
 	ATIVA {
 		
+		@Override
 		public boolean possuiReserva() {
 			return true;
 		}
@@ -11,6 +12,7 @@ public enum StatusReserva implements Status {
 	},
 	BAIXADA {
 
+		@Override
 		public boolean possuiReserva() {
 			return false;
 		}
@@ -18,6 +20,7 @@ public enum StatusReserva implements Status {
 	},
 	CANCELADA {
 
+		@Override
 		public boolean possuiReserva() {
 			return false;
 		}

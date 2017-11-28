@@ -36,10 +36,8 @@ public class ClienteIndiceComposite {
 		for (Sessao sessaoIndice : indice.getSessoes()) {
 			System.out.println(sessaoIndice.getTitulo());
 			for (Sessao sessao1 : sessaoIndice.getSessoes()) {
-				System.out.println(sessao1.getTitulo());
-				
-			}
-			
+				System.out.println(sessao1.getTitulo());		
+			}	
 		}
 
 	}

@@ -4,23 +4,27 @@ import java.util.List;
 
 import br.com.trabalhogof.domain.to.LivroTO;
 
-public class Livro {
+public abstract class Livro {
 	
 	private Long id;
 	private String titulo;
+	private TipoLivro tipo;
 	private List<Exemplar> exemplares;
 	
 	/**
-	 * Fabrica um {@link Livro} a partir de um {@link LivroTO}
+	 * Construtor padrao
+	 */
+	public Livro() {
+		super();
+	}
+	
+	/**
 	 * 
 	 * @param livroTO
-	 * @return
 	 */
-	public static Livro newLivro(LivroTO livroTO) {
-		Livro livro = new Livro();
-		livro.setId(livroTO.getId());
-		livro.setTitulo(livroTO.getTitulo());
-		return livro;
+	public Livro(LivroTO livroTO) {
+		this.id = livroTO.getId();
+		this.titulo = livroTO.getTitulo();
 	}
 	
 	/**
@@ -78,6 +82,10 @@ public class Livro {
 		
 	}
 
+	/*
+	 * Getters e Setters
+	 */
+	
 	public Long getId() {
 		return id;
 	}
@@ -92,6 +100,14 @@ public class Livro {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public TipoLivro getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoLivro tipo) {
+		this.tipo = tipo;
 	}
 
 	public List<Exemplar> getExemplares() {
