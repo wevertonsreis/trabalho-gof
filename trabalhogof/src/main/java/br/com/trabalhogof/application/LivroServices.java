@@ -11,7 +11,9 @@ import br.com.trabalhogof.domain.factory.LivroFactory;
 import br.com.trabalhogof.domain.repository.ExemplarRepository;
 import br.com.trabalhogof.domain.repository.LivroRepository;
 import br.com.trabalhogof.domain.repository.ReservaRepository;
+import br.com.trabalhogof.domain.repository.UsuarioRepository;
 import br.com.trabalhogof.domain.to.EmprestimoTO;
+import br.com.trabalhogof.domain.to.ExemplarTO;
 import br.com.trabalhogof.domain.to.LivroTO;
 import br.com.trabalhogof.domain.to.UsuarioTO;
 
@@ -59,6 +61,11 @@ public class LivroServices {
 		return emprestimoTO;
 	}
 	
+	public static ExemplarTO localizarExemplar(Long idExemplar) {
+		Exemplar exemplar = ExemplarRepository.find(idExemplar);
+		return new ExemplarTO(exemplar.getId(), exemplar.getLivro().getId());
+	}
+	
 	public static float realizarDevolucao(Long idExemplar) {
 		Exemplar exemplar = ExemplarRepository.find(idExemplar);
 		exemplar.devolver();
@@ -70,6 +77,20 @@ public class LivroServices {
 		Exemplar exemplar = ExemplarRepository.find(idExemplar);
 		Emprestimo emprestimoVigente = exemplar.getEmprestimoVigente();
 		emprestimoVigente.setMultaQuitada(true);
+	}
+
+	public static UsuarioTO localizarUsuario(Long idUsuario) {
+		return UsuarioRepository.find(idUsuario);
+	}
+
+	public static void realizarEmprestimo(ExemplarTO exemplarTO, UsuarioTO usuarioTO) {
+		Exemplar exemplar = Exemplar.newExemplar(exemplarTO);
+		Usuario usuario = Usuario.newUsuario(usuarioTO);
+		
+		if (exemplar.disponivel() && usuario.podeTomarEmprestimo()) {
+			exemplar.emprestar(usuario);
+		}
+		
 	}
 	
 }

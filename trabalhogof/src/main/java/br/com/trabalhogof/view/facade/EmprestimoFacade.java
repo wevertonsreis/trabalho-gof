@@ -2,6 +2,7 @@ package br.com.trabalhogof.view.facade;
 
 import br.com.trabalhogof.application.LivroServices;
 import br.com.trabalhogof.domain.to.EmprestimoTO;
+import br.com.trabalhogof.domain.to.ExemplarTO;
 import br.com.trabalhogof.domain.to.UsuarioTO;
 
 /**
@@ -11,8 +12,34 @@ public class EmprestimoFacade {
 
 	private EmprestimoFacade() {}
 	
-	public static void realizarEmprestimo(Long idExemplar, UsuarioTO usuarioTO) {
-		
+	/**
+	 * Responsavel por localizar o exemplar
+	 * 
+	 * @param idExemplar Identificador do exemplar
+	 * @return
+	 */
+	public static ExemplarTO localizarExemplar(Long idExemplar) {
+		return LivroServices.localizarExemplar(idExemplar);
+	}
+	
+	/**
+	 * Responsavel por localizar o usuario
+	 * 
+	 * @param idUsuario
+	 * @return
+	 */
+	public static UsuarioTO localizarUsuario(Long idUsuario) {
+		return LivroServices.localizarUsuario(idUsuario);
+	}
+	
+	/**
+	 * Responsavel por realizar o emprestimo
+	 * 
+	 * @param exemplarTO
+	 * @param usuarioTO
+	 */
+	public static void realizarEmprestimo(ExemplarTO exemplarTO, UsuarioTO usuarioTO) {
+		LivroServices.realizarEmprestimo(exemplarTO, usuarioTO);
 	}
 	
 	/**

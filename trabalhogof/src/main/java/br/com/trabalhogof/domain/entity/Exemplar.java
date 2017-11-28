@@ -2,11 +2,26 @@ package br.com.trabalhogof.domain.entity;
 
 import java.util.List;
 
+import br.com.trabalhogof.domain.to.ExemplarTO;
+import br.com.trabalhogof.domain.to.UsuarioTO;
+
 public class Exemplar {
 	
 	private Long id;
 	private Livro livro;
 	private List<Emprestimo> emprestimos;
+	
+	/**
+	 * Metodo responsavel por criar um {@link Exemplar} a partir de um {@link UsuarioTO}
+	 * 
+	 * @param exemplarTO
+	 * @return
+	 */
+	public static Exemplar newExemplar(ExemplarTO exemplarTO) {
+		Exemplar exemplar = new Exemplar();
+		exemplar.setId(exemplarTO.getId());
+		return exemplar;
+	}
 	
 	/**
 	 * Retorna verdadeiro se o exemplar esta disponivel para emprestimo
@@ -20,8 +35,15 @@ public class Exemplar {
 		return false;
 	}
 	
+	/**
+	 * Responsavel por emprestar o exemplar ao usuario
+	 * 
+	 * @param usuario
+	 */
 	public void emprestar(Usuario usuario) {
-		//TODO IMPLEMENTAR
+		if (getLivro().possuiReserva(usuario)){
+			getLivro().baixarReserva(usuario);
+		}
 	}
 	
 	public float devolver() {
@@ -67,5 +89,5 @@ public class Exemplar {
 	public void setEmprestimos(List<Emprestimo> emprestimos) {
 		this.emprestimos = emprestimos;
 	}
-	
+
 }

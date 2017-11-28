@@ -1,11 +1,16 @@
 package br.com.trabalhogof.domain.repository;
 
 import br.com.trabalhogof.domain.entity.Usuario;
+import br.com.trabalhogof.domain.to.UsuarioTO;
 
 public class UsuarioRepository {
 
 	private UsuarioRepository() {}
 
+	public static UsuarioTO find(Long idUsuario) {
+		return null;
+	}
+	
 	public static Usuario findAguardandoLivro(Long idLivro) {
 		Usuario u5 = new Usuario(null);
 		u5.setNome("TESTE 5");
@@ -24,5 +29,5 @@ public class UsuarioRepository {
 		
 		return u1;
 	}
-	
+
 }
