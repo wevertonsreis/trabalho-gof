@@ -1,5 +1,8 @@
 package br.com.trabalhogof.domain;
 
+/**
+ * Template Method
+ */
 public abstract class CalculadorDeMulta {
 
 	/**

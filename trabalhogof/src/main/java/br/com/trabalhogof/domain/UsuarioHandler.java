@@ -1,5 +1,8 @@
 package br.com.trabalhogof.domain;
 
+/**
+ * Chain of Responsibility
+ */
 public abstract class UsuarioHandler {
 
 	private UsuarioHandler proximoUsuarioHandler;

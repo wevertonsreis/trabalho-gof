@@ -11,6 +11,8 @@ import br.com.trabalhogof.domain.to.LivroTO;
  */
 public class LivroFactory {
 	
+	private LivroFactory() {}
+
 	/**
 	 * Metodo responsavel por criar o livro
 	 * 

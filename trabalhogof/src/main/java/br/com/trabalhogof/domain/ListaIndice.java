@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * Classe qure representa uma lista de {@link Indice}
+ * 
+ * Iterator
  */
 public class ListaIndice extends AbstractList<Indice> {
 

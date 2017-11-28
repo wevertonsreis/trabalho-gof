@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 /**
  * Classe que representa o modo de interacao de {@link Indice}
+ * 
+ * Iterator
  */
 public class IteratorIndice implements Iterator<Indice> {
 

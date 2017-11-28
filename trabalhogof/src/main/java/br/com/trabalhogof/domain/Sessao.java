@@ -2,6 +2,9 @@ package br.com.trabalhogof.domain;
 
 import java.util.List;
 
+/**
+ * Composite
+ */
 public abstract class Sessao {
 	
 	protected String titulo;

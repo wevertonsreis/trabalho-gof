@@ -7,6 +7,8 @@ import br.com.trabalhogof.domain.entity.Usuario;
 
 public class ReservaRepository {
 
+	private ReservaRepository() {}
+
 	public static List<Reserva> list(Usuario usuario) {
 		return null;
 	}

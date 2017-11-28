@@ -25,12 +25,4 @@ public class UsuarioRepository {
 		return u1;
 	}
 	
-	public static void main(String[] args) {
-		
-		Usuario usuario = findAguardandoLivro(null);
-		
-		System.out.println(usuario.tomarEmprestimo());
-		
-	}
-	
 }

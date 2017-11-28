@@ -3,6 +3,9 @@ package br.com.trabalhogof.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Iterator
+ */
 public class Indice extends Sessao {
 
 	private List<Sessao> sessoes = new ArrayList<>();

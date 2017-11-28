@@ -3,6 +3,9 @@ package br.com.trabalhogof.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Composite
+ */
 public class SubSessao extends Sessao {
 
 	private List<Sessao> sessoes = new ArrayList<>();
